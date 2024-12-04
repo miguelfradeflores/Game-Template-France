@@ -25,24 +25,24 @@ namespace IndieMarc.TopDown
         private void Start()
         {
             //Load game data
-            PlayerData pdata = PlayerData.Get();
-            if (!string.IsNullOrEmpty(pdata.current_scene))
-            {
-                if (!string.IsNullOrEmpty(pdata.current_checkpoint))
-                {
-                    //Go to checkpoint
-                    Checkpoint checkpoint = Checkpoint.Get(pdata.current_checkpoint);
-                    if (checkpoint)
-                        MoveCharacterTo(checkpoint.transform.position);
-                }
-                else
-                {
-                    //Go to entry
-                    LevelExit exit = LevelExit.Get(pdata.current_entry_index);
-                    if (exit != null)
-                        MoveCharacterTo(exit.transform.position + new Vector3(exit.entrance_offset.x, exit.entrance_offset.y));
-                }
-            }
+            //PlayerData pdata = PlayerData.Get();
+            //if (!string.IsNullOrEmpty(pdata.current_scene))
+            //{
+            //    if (!string.IsNullOrEmpty(pdata.current_checkpoint))
+            //    {
+            //        //Go to checkpoint
+            //        Checkpoint checkpoint = Checkpoint.Get(pdata.current_checkpoint);
+            //        if (checkpoint)
+            //            MoveCharacterTo(checkpoint.transform.position);
+            //    }
+            //    else
+            //    {
+            //        //Go to entry
+            //        LevelExit exit = LevelExit.Get(pdata.current_entry_index);
+            //        if (exit != null)
+            //            MoveCharacterTo(exit.transform.position + new Vector3(exit.entrance_offset.x, exit.entrance_offset.y));
+            //    }
+            //}
 
             //Pause game
             if (PauseMenu.Get())
