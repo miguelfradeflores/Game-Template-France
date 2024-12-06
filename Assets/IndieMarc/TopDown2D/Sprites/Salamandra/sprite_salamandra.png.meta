@@ -34,7 +34,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 1
+    filterMode: 0
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -43,12 +43,12 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 200
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -106,9 +106,253 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Windows Store Apps
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: sprite_salamandra_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 2797
+        width: 676
+        height: 711
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fbb2146d547b3ef409114139cd386a80
+      internalID: -2142468534
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sprite_salamandra_1
+      rect:
+        serializedVersion: 2
+        x: 676
+        y: 2797
+        width: 676
+        height: 711
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ecf0a222b978cdb40b1c483a99c74bdd
+      internalID: -2043057668
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sprite_salamandra_2
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 2086
+        width: 676
+        height: 711
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7ba9649e9677d884290eb179e79ffd2a
+      internalID: -995805962
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sprite_salamandra_3
+      rect:
+        serializedVersion: 2
+        x: 676
+        y: 2086
+        width: 676
+        height: 711
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5575ffb062135a94cad8a98f9aa64659
+      internalID: -653705390
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sprite_salamandra_4
+      rect:
+        serializedVersion: 2
+        x: 1352
+        y: 2086
+        width: 676
+        height: 711
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 966982a9f23eef3418f93c92754705ab
+      internalID: -1028336576
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sprite_salamandra_5
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1375
+        width: 676
+        height: 711
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 72479aa2f21959943a2099f35ad669a4
+      internalID: -275590498
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sprite_salamandra_6
+      rect:
+        serializedVersion: 2
+        x: 676
+        y: 1375
+        width: 676
+        height: 711
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cd7ab323e2a704444b824035a26092b0
+      internalID: -2097663748
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sprite_salamandra_7
+      rect:
+        serializedVersion: 2
+        x: 1352
+        y: 1375
+        width: 676
+        height: 711
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e583ade02a2deed498b247e57ce68a0c
+      internalID: 2023759550
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sprite_salamandra_8
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 664
+        width: 676
+        height: 711
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4fb8c34b20d107747ab0c2185bcaa3a9
+      internalID: -1974975040
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sprite_salamandra_9
+      rect:
+        serializedVersion: 2
+        x: 676
+        y: 664
+        width: 676
+        height: 711
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c2a65e5a324ff7848be50761c50a5670
+      internalID: 1836162419
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sprite_salamandra_10
+      rect:
+        serializedVersion: 2
+        x: 1352
+        y: 664
+        width: 676
+        height: 711
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5ca314e6b9414ad44a56380735e4c699
+      internalID: -1425943251
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -119,7 +363,18 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      sprite_salamandra_0: -2142468534
+      sprite_salamandra_1: -2043057668
+      sprite_salamandra_10: -1425943251
+      sprite_salamandra_2: -995805962
+      sprite_salamandra_3: -653705390
+      sprite_salamandra_4: -1028336576
+      sprite_salamandra_5: -275590498
+      sprite_salamandra_6: -2097663748
+      sprite_salamandra_7: 2023759550
+      sprite_salamandra_8: -1974975040
+      sprite_salamandra_9: 1836162419
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
