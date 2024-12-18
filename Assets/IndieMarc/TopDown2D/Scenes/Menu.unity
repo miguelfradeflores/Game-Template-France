@@ -1254,7 +1254,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   CharacterDB: {fileID: 11400000, guid: b548cc3b4903b469ea227359221e7f56, type: 2}
-  text: Player 1
+  tmp: {fileID: 827211346}
   player: {fileID: 1836969394}
 --- !u!212 &1836969394
 SpriteRenderer:

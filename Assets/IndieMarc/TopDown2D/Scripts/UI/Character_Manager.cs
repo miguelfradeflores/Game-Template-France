@@ -9,7 +9,8 @@ public class Character_Manager : MonoBehaviour
 
     public Character_db CharacterDB;
 
-    public string text;
+    public GameObject tmp;
+    private string character_name;
     public SpriteRenderer player;
 
     private int option = 0;
@@ -44,7 +45,7 @@ public class Character_Manager : MonoBehaviour
     {
         Character_Selector character = CharacterDB.getCharacter(opt);
         player.sprite = character.character_sprite;
-        text = character.character_name;
+        tmp.GetComponent<TMPro.TextMeshProUGUI>().text = character.character_name;
     }
 
     public void changeScene()

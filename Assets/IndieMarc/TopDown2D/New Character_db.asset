@@ -31,3 +31,15 @@ MonoBehaviour:
   - character_name: student_6
     character_sprite: {fileID: -381661139, guid: 150550dfeb0388e47b084efacda12c62,
       type: 3}
+  - character_name: student_7
+    character_sprite: {fileID: -321240038, guid: e61cf4db4b99e5d4181a4b132133ec4f,
+      type: 3}
+  - character_name: student_8
+    character_sprite: {fileID: -575096351, guid: 48e01fec620026047abc6cb60e115e26,
+      type: 3}
+  - character_name: student_9
+    character_sprite: {fileID: 1745419382, guid: fa61345b0479c9840b1b399b8c679899,
+      type: 3}
+  - character_name: student_10
+    character_sprite: {fileID: -790102582, guid: 00a8926eb6b734e89bf4d8c0c9894165,
+      type: 3}
