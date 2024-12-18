@@ -712,6 +712,37 @@ Transform:
   m_Children: []
   m_Father: {fileID: 611695600}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!21 &134805752
+Material:
+  serializedVersion: 8
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Grasss
+  m_Shader: {fileID: 10752, guid: 0000000000000000f000000000000000, type: 0}
+  m_Parent: {fileID: 0}
+  m_ModifiedSerializedProperties: 0
+  m_ValidKeywords: []
+  m_InvalidKeywords: []
+  m_LightmapFlags: 4
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_LockedProperties: 
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - _MainTex:
+        m_Texture: {fileID: 2800000, guid: 4bdb25c7eb2b86c4fb49521341228cd2, type: 3}
+        m_Scale: {x: 17.42361, y: 15.426684}
+        m_Offset: {x: 0, y: 0}
+    m_Ints: []
+    m_Floats: []
+    m_Colors: []
+  m_BuildTextureStacks: []
 --- !u!1 &142208147
 GameObject:
   m_ObjectHideFlags: 0
@@ -5017,6 +5048,12 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1470419890}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &641069854 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 97793594108383437, guid: 717ce763b890e4f36b9a872fa07e003c,
+    type: 3}
+  m_PrefabInstance: {fileID: 1675299058}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &656323245
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -8502,7 +8539,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 1710299799}
+      objectReference: {fileID: 134805752}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -9238,6 +9275,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1746692015567056, guid: 1852264e0becbae42acd5fad694ac75d, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4191265307406884, guid: 1852264e0becbae42acd5fad694ac75d, type: 3}
       propertyPath: m_RootOrder
       value: 8
@@ -12040,12 +12081,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 611695600}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &1547592892 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1746692015567056, guid: 1852264e0becbae42acd5fad694ac75d,
-    type: 3}
-  m_PrefabInstance: {fileID: 1199873563}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1578798003
 GameObject:
   m_ObjectHideFlags: 0
@@ -12649,6 +12684,74 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1001 &1675299058
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 97793594108383437, guid: 717ce763b890e4f36b9a872fa07e003c,
+        type: 3}
+      propertyPath: m_Name
+      value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 1351168854980401177, guid: 717ce763b890e4f36b9a872fa07e003c,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -2.68
+      objectReference: {fileID: 0}
+    - target: {fileID: 1351168854980401177, guid: 717ce763b890e4f36b9a872fa07e003c,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -1.72
+      objectReference: {fileID: 0}
+    - target: {fileID: 1351168854980401177, guid: 717ce763b890e4f36b9a872fa07e003c,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1351168854980401177, guid: 717ce763b890e4f36b9a872fa07e003c,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1351168854980401177, guid: 717ce763b890e4f36b9a872fa07e003c,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1351168854980401177, guid: 717ce763b890e4f36b9a872fa07e003c,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1351168854980401177, guid: 717ce763b890e4f36b9a872fa07e003c,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1351168854980401177, guid: 717ce763b890e4f36b9a872fa07e003c,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1351168854980401177, guid: 717ce763b890e4f36b9a872fa07e003c,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1351168854980401177, guid: 717ce763b890e4f36b9a872fa07e003c,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 717ce763b890e4f36b9a872fa07e003c, type: 3}
 --- !u!1 &1695936683
 GameObject:
   m_ObjectHideFlags: 0
@@ -12817,37 +12920,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 611695600}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!21 &1710299799
-Material:
-  serializedVersion: 8
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_Name: Grasss
-  m_Shader: {fileID: 10752, guid: 0000000000000000f000000000000000, type: 0}
-  m_Parent: {fileID: 0}
-  m_ModifiedSerializedProperties: 0
-  m_ValidKeywords: []
-  m_InvalidKeywords: []
-  m_LightmapFlags: 4
-  m_EnableInstancingVariants: 0
-  m_DoubleSidedGI: 0
-  m_CustomRenderQueue: -1
-  stringTagMap: {}
-  disabledShaderPasses: []
-  m_LockedProperties: 
-  m_SavedProperties:
-    serializedVersion: 3
-    m_TexEnvs:
-    - _MainTex:
-        m_Texture: {fileID: 2800000, guid: 4bdb25c7eb2b86c4fb49521341228cd2, type: 3}
-        m_Scale: {x: 17.42361, y: 15.426684}
-        m_Offset: {x: 0, y: 0}
-    m_Ints: []
-    m_Floats: []
-    m_Colors: []
-  m_BuildTextureStacks: []
 --- !u!1 &1718792626
 GameObject:
   m_ObjectHideFlags: 0
@@ -20978,7 +21050,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2de392540b849ca4f98ccab4ff895875, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  target: {fileID: 1547592892}
+  target: {fileID: 641069854}
   target_offset: {x: 0, y: 0, z: -10}
   camera_speed: 5
   level_limits: 0
@@ -22528,3 +22600,4 @@ SceneRoots:
   - {fileID: 576955033}
   - {fileID: 1199873563}
   - {fileID: 1407301007093691861}
+  - {fileID: 1675299058}

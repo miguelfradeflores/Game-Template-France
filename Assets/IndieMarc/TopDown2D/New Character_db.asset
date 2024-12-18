@@ -1,0 +1,33 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ef7a32a0b0f3b42f998fcbd0044e13b3, type: 3}
+  m_Name: New Character_db
+  m_EditorClassIdentifier: 
+  characters:
+  - character_name: student_1
+    character_sprite: {fileID: 363052589, guid: 806acee082b6f0640b043709897e133e,
+      type: 3}
+  - character_name: student_2
+    character_sprite: {fileID: -903056120, guid: c6a0a70d7503a364ca218074e521d0b4,
+      type: 3}
+  - character_name: student_3
+    character_sprite: {fileID: -1593191491, guid: ed36883a78b4e294a9c4b6e9e912b1ca,
+      type: 3}
+  - character_name: student_4
+    character_sprite: {fileID: -1473944386, guid: d87f00772359f5340ab43bb93d7e9d2f,
+      type: 3}
+  - character_name: student_5
+    character_sprite: {fileID: 1437225250, guid: 6e6306a35e34121418895db1fc7dd05b,
+      type: 3}
+  - character_name: student_6
+    character_sprite: {fileID: -381661139, guid: 150550dfeb0388e47b084efacda12c62,
+      type: 3}
