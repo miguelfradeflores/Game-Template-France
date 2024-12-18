@@ -6,6 +6,8 @@ namespace IndieMarc.TopDown
 {
     public class HealthBar : MonoBehaviour
     {
+        public int player_index = 0;
+
         private IconBar icon_bar;
         private ProgressBar health_bar;
 
