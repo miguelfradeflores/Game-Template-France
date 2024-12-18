@@ -29,7 +29,7 @@ namespace IndieMarc.TopDown
 
         }
 
-        public void Take(PlayerCharacter character)
+        public void Take(Player character)
         {
             PlayerData pdata = PlayerData.Get();
             if (type == PowerupType.Life)
@@ -49,8 +49,8 @@ namespace IndieMarc.TopDown
 
         private void OnTriggerEnter2D(Collider2D collision)
         {
-            if (collision.GetComponent<PlayerCharacter>())
-                Take(collision.GetComponent<PlayerCharacter>());
+            if (collision.GetComponent<Player>())
+                Take(collision.GetComponent<Player>());
         }
     }
 

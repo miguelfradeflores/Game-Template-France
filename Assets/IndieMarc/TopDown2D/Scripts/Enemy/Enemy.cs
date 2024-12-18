@@ -252,7 +252,8 @@ namespace IndieMarc.TopDown
             {
                 if (IsPlayerInRange(follow_range))
                 {
-                    PlayerCharacter character = PlayerCharacter.GetNearest(transform.position, follow_range, true);
+                    //PlayerCharacter character = PlayerCharacter.GetNearest(transform.position, follow_range, true);
+                    Player character = Player.Get();
                     if (character != null)
                     {
                         MoveTo(character.transform.position, follow_speed_mult);
@@ -389,7 +390,8 @@ namespace IndieMarc.TopDown
 
         public bool IsPlayerInRange(float range)
         {
-            PlayerCharacter character = PlayerCharacter.GetNearest(transform.position, range, true);
+            //PlayerCharacter character = PlayerCharacter.GetNearest(transform.position, range, true);
+            Player character = Player.Get();
             if (character != null)
             {
                 Vector3 dir_vect = character.transform.position - transform.position;

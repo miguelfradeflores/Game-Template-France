@@ -24,11 +24,11 @@ namespace IndieMarc.TopDown
     {
         public int player_id;
 
-        [Header("Stats")]
+        //[Header("Stats")]
         public float max_hp = 100f;
         public float attack_damage = 1f;
         
-        [Header("Movement")]
+        //[Header("Movement")]
         public float move_accel = 20f;
         public float move_deccel = 20f;
         public float move_max = 5f;
@@ -38,7 +38,7 @@ namespace IndieMarc.TopDown
         public LayerMask raycast_mask = ~(0); //All bit 1
         public float raycast_dist = 0.1f;
 
-        [Header("References")]
+        //[Header("References")]
         public Transform center;
         public Transform hand;
 

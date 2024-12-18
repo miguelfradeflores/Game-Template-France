@@ -6,8 +6,6 @@ namespace IndieMarc.TopDown
 {
     public class HealthBar : MonoBehaviour
     {
-        public int player_index = 0;
-
         private IconBar icon_bar;
         private ProgressBar health_bar;
 
@@ -24,14 +22,14 @@ namespace IndieMarc.TopDown
         {
             if (icon_bar != null)
             {
-                PlayerCharacter character = PlayerCharacter.Get(player_index);
+                Player character = Player.Get();
                 icon_bar.value = Mathf.RoundToInt(character.GetHP());
                 icon_bar.value_max = Mathf.RoundToInt(character.max_hp);
             }
 
             if (health_bar != null)
             {
-                PlayerCharacter character = PlayerCharacter.Get(player_index);
+                Player character = Player.Get();
                 health_bar.value = character.GetHP();
                 health_bar.value_max = character.max_hp;
             }
