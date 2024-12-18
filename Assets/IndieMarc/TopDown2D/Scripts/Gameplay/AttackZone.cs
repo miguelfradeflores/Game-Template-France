@@ -7,17 +7,16 @@ namespace IndieMarc.TopDown
     public class AttackZone : MonoBehaviour
     {
 
-        private PlayerCharacter character;
+        private Player character;
 
         private void Awake()
         {
-            character = GetComponentInParent<PlayerCharacter>();
+            character = GetComponentInParent<Player>();
         }
 
         private void OnTriggerEnter2D(Collider2D collision)
         {
             character.OnSwordHit(collision);
-
         }
     }
 }

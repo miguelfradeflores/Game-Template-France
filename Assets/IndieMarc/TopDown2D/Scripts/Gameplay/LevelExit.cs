@@ -44,15 +44,16 @@ namespace IndieMarc.TopDown
 
         void OnTriggerStay2D(Collider2D coll)
         {
-            if (coll.gameObject.GetComponent<PlayerCharacter>())
+            if (coll.gameObject.TryGetComponent(out Player character))
             {
                 if (go_to_level != "")
                 {
-                    PlayerCharacter character = coll.gameObject.GetComponent<PlayerCharacter>();
-                    if (!check_dir || Vector3.Dot(character.GetMove().normalized, -entrance_offset.normalized) > 0.25f)
-                    {
+                    // No se qué hace este condicional pero lo quité porque no parece necesario jasjajsj
+                    //
+                    //if (!check_dir || Vector3.Dot(character.GetMove().normalized, -entrance_offset.normalized) > 0.25f)
+                    //{
                         SceneNav.GoToLevel(go_to_level, go_to_index);
-                    }
+                    //}
                 }
             }
         }

@@ -73,7 +73,7 @@ namespace IndieMarc.TopDown
 
         void OnTriggerEnter2D(Collider2D coll)
         {
-            if (coll.gameObject.GetComponent<PlayerCharacter>())
+            if (coll.gameObject.GetComponent<Player>())
             {
                 if (state == LeverState.disabled)
                     return;
