@@ -48,7 +48,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 400
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -72,7 +72,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -106,9 +106,316 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Windows Store Apps
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: Spritesheet_Chems_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 2806.4
+        width: 686.6667
+        height: 701.6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8f434de68efa74b488e4bbdf1d45a69f
+      internalID: 1246589961
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Spritesheet_Chems_1
+      rect:
+        serializedVersion: 2
+        x: 686
+        y: 2806.4
+        width: 686.6667
+        height: 701.6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 49a554b668bb3c74ab92ee3b723fc3a6
+      internalID: 2145322247
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Spritesheet_Chems_2
+      rect:
+        serializedVersion: 2
+        x: 1372
+        y: 2806.4
+        width: 686.6667
+        height: 701.6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fda68eca72108d349b0473e67d873b33
+      internalID: -442602898
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Spritesheet_Chems_3
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 2105.4
+        width: 686.6667
+        height: 701.6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 98277bc1b98720a4690cdb8b66c76952
+      internalID: -1157503514
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Spritesheet_Chems_4
+      rect:
+        serializedVersion: 2
+        x: 686
+        y: 2105.4
+        width: 686.6667
+        height: 701.6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9b3502cdc77f460489ad4c0f1fe783d6
+      internalID: 1748324680
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Spritesheet_Chems_5
+      rect:
+        serializedVersion: 2
+        x: 1372
+        y: 2105.4
+        width: 686.6667
+        height: 701.6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 08fab6f54dc13264ca4daa9b68e3e131
+      internalID: 1434131534
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Spritesheet_Chems_6
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1404.4
+        width: 686.6667
+        height: 701.6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4797e279127da774cb8d17b075a785d2
+      internalID: -579346226
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Spritesheet_Chems_7
+      rect:
+        serializedVersion: 2
+        x: 686
+        y: 1404.4
+        width: 686.6667
+        height: 701.6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: df8c1e36fa01f1f4883e7361349ca318
+      internalID: -1031984579
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Spritesheet_Chems_8
+      rect:
+        serializedVersion: 2
+        x: 1372
+        y: 1404.4
+        width: 686.6667
+        height: 701.6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 755b07ffe938f394da2b024981f6d649
+      internalID: -684381388
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Spritesheet_Chems_9
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 703.4
+        width: 686.6667
+        height: 701.6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 415314bcda6bd1e44bdca9358937c84b
+      internalID: -1336808139
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Spritesheet_Chems_10
+      rect:
+        serializedVersion: 2
+        x: 686
+        y: 703.4
+        width: 686.6667
+        height: 701.6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 305367df62af6814eb2f0b9149e768fc
+      internalID: 691667971
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Spritesheet_Chems_11
+      rect:
+        serializedVersion: 2
+        x: 1372
+        y: 703.4
+        width: 686.6667
+        height: 701.6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: adc91196ecd9e694f81fb4214851cc26
+      internalID: -1822453693
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Spritesheet_Chems_12
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 2
+        width: 720
+        height: 702
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 11c807b326e3109438aecb5974d854b9
+      internalID: 1570446391
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Spritesheet_Chems_13
+      rect:
+        serializedVersion: 2
+        x: 720
+        y: 2
+        width: 619
+        height: 702
+      alignment: 9
+      pivot: {x: 0.55, y: 0.1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 00373dc78488ee04fb518c9de559a32c
+      internalID: -1730503691
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -119,7 +426,21 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Spritesheet_Chems_0: 1246589961
+      Spritesheet_Chems_1: 2145322247
+      Spritesheet_Chems_10: 691667971
+      Spritesheet_Chems_11: -1822453693
+      Spritesheet_Chems_12: 1570446391
+      Spritesheet_Chems_13: -1730503691
+      Spritesheet_Chems_2: -442602898
+      Spritesheet_Chems_3: -1157503514
+      Spritesheet_Chems_4: 1748324680
+      Spritesheet_Chems_5: 1434131534
+      Spritesheet_Chems_6: -579346226
+      Spritesheet_Chems_7: -1031984579
+      Spritesheet_Chems_8: -684381388
+      Spritesheet_Chems_9: -1336808139
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
