@@ -98,9 +98,9 @@ namespace IndieMarc.TopDown
             if (pdata != null)
             {
                 if (pdata.hp > 0)
-                    hp = pdata.hp;
-
-                pdata.hp = hp;
+                    //  hp = pdata.hp;
+                    hp =  3;
+                    pdata.hp = hp;
             }
         }
 
