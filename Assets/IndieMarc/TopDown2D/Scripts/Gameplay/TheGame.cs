@@ -9,7 +9,7 @@ namespace IndieMarc.TopDown
     {
 
         private bool paused = false;
-        private bool cinametic_paused = false;
+        // private bool cinametic_paused = false;
         private bool ended = false;
 
         public UnityAction<bool> onPause;
