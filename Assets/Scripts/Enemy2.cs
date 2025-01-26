@@ -4,13 +4,18 @@ using UnityEngine;
 
 namespace IndieMarc.TopDown
 {
+    [System.Serializable]
+    struct PatrolPoints
+    {
+        public List<Vector3> Points;
+    }
+
     [RequireComponent(typeof(Animator))]
     public class Enemy2 : MonoBehaviour
     {
         private enum State { Moving, Idle, Chasing, Attacking, TakingDamage };
 
         [SerializeField] private Player m_Player;
-        [SerializeField] private List<Transform> m_PatrolPoints = new();
         [SerializeField] private Material m_NormalMaterial;
         [SerializeField] private Material m_WhiteMaterial;
         [SerializeField] private float m_Speed;
@@ -20,11 +25,13 @@ namespace IndieMarc.TopDown
         [SerializeField] private float m_AttackDelay;
         [SerializeField] private float m_AttackDamage;
         [SerializeField] private float m_HealthPoints;
+        [SerializeField] private PatrolPoints m_PatrolPoints;
 
         private State m_CurrentState = State.Idle;
         private Animator m_Animator;
         private SpriteRenderer m_Sprite;
         private SpriteRenderer m_Sword;
+        private Collider2D m_Collider;
         private int m_CurrentPatrolPoint;
         private int m_NextPatrolPoint;
         private float m_IdleTimer = 0f;
@@ -36,15 +43,16 @@ namespace IndieMarc.TopDown
             m_Animator = GetComponent<Animator>();
             m_Sprite = GetComponent<SpriteRenderer>();
             m_Sword = transform.GetChild(0).GetComponent<SpriteRenderer>();
-
-            m_CurrentPatrolPoint = 0;
-            m_NextPatrolPoint = (m_CurrentPatrolPoint + 1) % m_PatrolPoints.Count;
+            m_Collider = GetComponent<Collider2D>();
         }
 
         void Start()
         {
-            if (m_PatrolPoints.Count == 0) m_PatrolPoints.Add(transform);
-            transform.position = m_PatrolPoints[0].position;
+            if (m_PatrolPoints.Points.Count == 0) m_PatrolPoints.Points.Add(transform.position);
+            transform.position = m_PatrolPoints.Points[0];
+
+            m_CurrentPatrolPoint = 0;
+            m_NextPatrolPoint = (m_CurrentPatrolPoint + 1) % m_PatrolPoints.Points.Count;
         }
 
         void Update()
@@ -60,7 +68,7 @@ namespace IndieMarc.TopDown
                     m_CurrentState = State.Moving;
                     m_Animator.SetBool("walking", true);
 
-                    Vector3 nextPoint = m_PatrolPoints[m_NextPatrolPoint].position;
+                    Vector3 nextPoint = m_PatrolPoints.Points[m_NextPatrolPoint];
 
                     LeanTween.move(gameObject, nextPoint, Vector3.Distance(transform.position, nextPoint) / m_Speed)
                         .setOnComplete(() =>
@@ -69,7 +77,7 @@ namespace IndieMarc.TopDown
                             m_Animator.SetBool("walking", false);
                             m_IdleTimer = 0f;
                             m_CurrentPatrolPoint = m_NextPatrolPoint;
-                            m_NextPatrolPoint = (m_CurrentPatrolPoint + 1) % m_PatrolPoints.Count;
+                            m_NextPatrolPoint = (m_CurrentPatrolPoint + 1) % m_PatrolPoints.Points.Count;
                         });
                 }
             }
@@ -152,6 +160,7 @@ namespace IndieMarc.TopDown
                     if (m_HealthPoints <= 0)
                     {
                         m_Animator.SetTrigger("die");
+                        m_Collider.enabled = false;
 
                         if (m_ParanoiaSentToPlayer)
                         {
@@ -177,13 +186,13 @@ namespace IndieMarc.TopDown
         [ExecuteInEditMode]
         private void OnDrawGizmos()
         {
-            if (m_PatrolPoints.Count == 0) return;
+            if (m_PatrolPoints.Points.Count == 0) return;
 
-            Vector3 currentPoint = m_PatrolPoints[0].position;
-            for (int i = 1; i < m_PatrolPoints.Count + 1; i++)
+            Vector3 currentPoint = m_PatrolPoints.Points[0];
+            for (int i = 1; i < m_PatrolPoints.Points.Count + 1; i++)
             {
-                Gizmos.DrawLine(currentPoint, m_PatrolPoints[i % m_PatrolPoints.Count].position);
-                currentPoint = m_PatrolPoints[i % m_PatrolPoints.Count].position;
+                Gizmos.DrawLine(currentPoint, m_PatrolPoints.Points[i % m_PatrolPoints.Points.Count]);
+                currentPoint = m_PatrolPoints.Points[i % m_PatrolPoints.Points.Count];
             }
         }
     }
