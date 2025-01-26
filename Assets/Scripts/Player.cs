@@ -15,24 +15,31 @@ namespace IndieMarc.TopDown
 {
     public class Player : MonoBehaviour
     {
+        [SerializeField] private CameraVFX m_CameraVFX;
+
+        [SerializeField] private Material m_NormalMaterial;
+        [SerializeField] private Material m_WhiteMaterial;
+
         public float max_hp = 5f;
         public float attack_damage = 1f;
 
-        public float speed = 200f;
+        public float m_Speed;
         private float horizontal_input;
         private float vertical_input;
-        private float hp;
-        private float hit_timer = 0f;
+        private float m_HealthPoints;
 
         public UnityAction onDeath;
         public UnityAction onHit;
         public UnityAction<GameObject> onAttackHit;
 
-        private Rigidbody2D rigid;
-        private Collider2D collide;
-        private Animator animator;
-        private PlayerCharacterState state;
-
+        private Rigidbody2D m_RigidBody;
+        private Collider2D m_Collider;
+        private Animator m_Animator;
+        private SpriteRenderer m_Sprite;
+        private SpriteRenderer m_Sword;
+        private PlayerCharacterState m_State;
+        private bool m_CanMove;
+        private int m_Paranoia;
 
         private static Player instance;
 
@@ -41,27 +48,29 @@ namespace IndieMarc.TopDown
             if (instance != null) Destroy(gameObject);
             instance = this;
 
-            rigid = GetComponent<Rigidbody2D>();
-            collide = GetComponent<Collider2D>();
-            animator = GetComponent<Animator>();
+            m_RigidBody = GetComponent<Rigidbody2D>();
+            m_Collider = GetComponent<Collider2D>();
+            m_Animator = GetComponent<Animator>();
+            m_Sprite = GetComponent<SpriteRenderer>();
+            m_Sword = transform.GetChild(0).GetComponent<SpriteRenderer>();
 
-            hp = max_hp;
+            m_HealthPoints = max_hp;
+            m_Paranoia = 0;
+            m_CanMove = true;
         }
 
         void Update()
         {
-            if (IsDead()) return;
+            if (!IsAlive()) return;
 
-            hit_timer += Time.deltaTime;
-
-            animator.SetBool("walking", horizontal_input != 0 || vertical_input != 0);
+            m_Animator.SetBool("walking", horizontal_input != 0 || vertical_input != 0);
 
             if (Input.GetMouseButtonDown(0)) CalculateAttack();
         }
 
         private void FixedUpdate()
         {
-            if (!IsDead())
+            if (IsAlive() && m_CanMove)
             {
                 horizontal_input = Input.GetAxisRaw("Horizontal");
                 vertical_input = Input.GetAxisRaw("Vertical");
@@ -72,7 +81,7 @@ namespace IndieMarc.TopDown
                 vertical_input = 0;
             }
 
-            rigid.velocity = speed * Time.deltaTime * new Vector2(horizontal_input, vertical_input).normalized;
+            transform.Translate(m_Speed * Time.deltaTime * new Vector2(horizontal_input, vertical_input).normalized);
         }
 
         private void CalculateAttack()
@@ -88,96 +97,94 @@ namespace IndieMarc.TopDown
 
         private void Attack(string direction)
         {
-            animator.SetTrigger(direction);
+            m_Animator.SetTrigger(direction);
         }
 
         public void HealDamage(float heal)
         {
-            if (!IsDead())
+            if (IsAlive())
             {
-                hp += heal;
-                hp = Mathf.Min(hp, max_hp);
+                m_HealthPoints += heal;
+                m_HealthPoints = Mathf.Min(m_HealthPoints, max_hp);
             }
         }
 
-        public void TakeDamage(float damage)
+        public void TakeDamage(Vector3 from, float damage)
         {
-            if (!IsDead() && hit_timer > 0f)
+            m_HealthPoints -= damage;
+
+            PlayerData pdata = PlayerData.Get();
+            if (pdata != null)
+                pdata.hp = m_HealthPoints;
+
+            m_CanMove = false;
+
+            m_Sprite.material = m_WhiteMaterial;
+            m_Sword.material = m_WhiteMaterial;
+
+            m_CameraVFX.Shake(0.3f, 0.1f);
+
+            LeanTween.delayedCall(0.15f, () =>
             {
-                hp -= damage;
-                hit_timer = -1f;
+                m_Sprite.material = m_NormalMaterial;
+                m_Sword.material = m_NormalMaterial;
+            });
 
-                PlayerData pdata = PlayerData.Get();
-                if (pdata != null)
-                    pdata.hp = hp;
-
-                if (hp <= 0f)
+            LeanTween.move(gameObject, transform.position + (transform.position - from).normalized * 1.5f, 1.5f / (m_Speed + 5))
+            .setEaseOutQuad()
+            .setOnComplete(() =>
+            {
+                if (m_HealthPoints <= 0)
                 {
-                    Kill();
+                    Debug.Log("Dying");
+                    m_Animator.SetTrigger("die");
                 }
                 else
                 {
-                    if (onHit != null)
-                        onHit.Invoke();
+                    LeanTween.delayedCall(0.25f, () =>
+                    {
+                        m_CanMove = true;
+                    });
                 }
-            }
+            });
         }
 
-        private void TouchEnemy(Enemy enemy)
-        {
-            TakeDamage(enemy.damage);
-        }
-
-        private void OnCollisionEnter2D(Collision2D collision)
-        {
-            Debug.Log("Colision");
-            if (IsDead())
-                return;
-
-            if (collision.gameObject.TryGetComponent(out Enemy enemy))
-            {
-                Debug.Log("Enemy");
-                TouchEnemy(enemy);
-            }
-        }
-
-        public bool IsDead()
-        {
-            return state == PlayerCharacterState.Dead;
-        }
-
-        public float GetHP() => hp;
+        public float GetHP() => m_HealthPoints;
 
         public static Player Get()
         {
             return instance;
         }
 
-        public void Kill()
+        public void OnSwordHit(Collider2D other)
         {
-            if (!IsDead())
+            if (other.TryGetComponent(out Enemy2 enemy))
             {
-                state = PlayerCharacterState.Dead;
-                rigid.velocity = Vector2.zero;
-                collide.enabled = false;
-
-                animator.SetTrigger("die");
-
-                //if (onDeath != null)
-                //    onDeath.Invoke();
+                enemy.TakeDamage(attack_damage);
             }
         }
 
-        public void OnSwordHit(Collider2D other)
-        {
-            if (other.TryGetComponent(out Enemy enemy))
-            {
-                enemy.TakeDamage(attack_damage);
-                enemy.Push(other.transform.position - transform.position);
+        public bool IsAlive() => m_HealthPoints > 0;
 
-                if (onAttackHit != null)
-                    onAttackHit.Invoke(enemy.gameObject);
-            }
+        public void IncreaseParanoia()
+        {
+            if (m_Paranoia == 0) TurnOnParanoiaMode();
+            m_Paranoia++;
+        }
+        public void DecreaseParanoia()
+        {
+            m_Paranoia--;
+            if (m_Paranoia == 0) TurnOffParanoiaMode();
+        }
+
+        private void TurnOnParanoiaMode()
+        {
+            m_CameraVFX.TurnOnParanoiaMode();
+        }
+
+        private void TurnOffParanoiaMode()
+        {
+            m_CameraVFX.TurnOffParanoiaMode();
         }
     }
 }
