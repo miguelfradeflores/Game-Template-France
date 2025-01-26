@@ -6,7 +6,6 @@ using UnityEngine.UI;
 [RequireComponent(typeof(Camera))]
 public class CameraVFX : MonoBehaviour
 {
-    [SerializeField] private Animator m_Animator;
     [SerializeField] private Image m_Vignette;
     private Camera m_Camera;
 
@@ -17,7 +16,6 @@ public class CameraVFX : MonoBehaviour
 
     public void TurnOnParanoiaMode()
     {
-        //m_Animator.SetBool("paranoia", true);
         LeanTween.color(m_Vignette.rectTransform, new(1, 1, 1, 0.45f), 0.25f);
         LeanTween.value(gameObject, m_Camera.orthographicSize, m_Camera.orthographicSize - 0.5f, 0.25f)
             .setOnUpdate((float value) =>
@@ -28,7 +26,6 @@ public class CameraVFX : MonoBehaviour
 
     public void TurnOffParanoiaMode()
     {
-        //m_Animator.SetBool("paranoia", false);
         LeanTween.color(m_Vignette.rectTransform, new(1, 1, 1, 0), 0.25f);
         LeanTween.value(gameObject, m_Camera.orthographicSize, m_Camera.orthographicSize + 0.5f, 0.25f)
             .setOnUpdate((float value) =>
