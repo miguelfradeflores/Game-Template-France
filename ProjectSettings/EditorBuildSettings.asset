@@ -18,6 +18,9 @@ EditorBuildSettings:
     path: Assets/IndieMarc/TopDown2D/Scenes/Load.unity
     guid: a673df5a51556d24997d0f761c4aa343
   - enabled: 1
-    path: Assets/IndieMarc/TopDown2D/Scenes/Menu.unity
+    path: Assets/IndieMarc/TopDown2D/Scenes/Menu_Character.unity
     guid: 2e3422b08ecf34276981dbd28d7e7da9
+  - enabled: 1
+    path: Assets/IndieMarc/TopDown2D/Scenes/Creditos.unity
+    guid: c29861aa7b3d247fdaa979c348c6d191
   m_configObjects: {}

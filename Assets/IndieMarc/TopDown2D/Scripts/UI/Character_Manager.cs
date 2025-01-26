@@ -8,8 +8,6 @@ public class Character_Manager : MonoBehaviour
 {
 
     public Character_db CharacterDB;
-
-    public GameObject tmp;
     private string character_name;
     public SpriteRenderer player;
 
@@ -45,7 +43,6 @@ public class Character_Manager : MonoBehaviour
     {
         Character_Selector character = CharacterDB.getCharacter(opt);
         player.sprite = character.character_sprite;
-        tmp.GetComponent<TMPro.TextMeshProUGUI>().text = character.character_name;
     }
 
     public void changeScene()
