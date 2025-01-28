@@ -16,6 +16,7 @@ namespace IndieMarc.TopDown
     public class Player : MonoBehaviour
     {
         public float max_hp = 5f;
+        public float attack_damage = 1f;
 
         public float speed = 200f;
         private float horizontal_input;
@@ -25,6 +26,7 @@ namespace IndieMarc.TopDown
 
         public UnityAction onDeath;
         public UnityAction onHit;
+        public UnityAction<GameObject> onAttackHit;
 
         private Rigidbody2D rigid;
         private Collider2D collide;
@@ -48,6 +50,8 @@ namespace IndieMarc.TopDown
 
         void Update()
         {
+            if (IsDead()) return;
+
             hit_timer += Time.deltaTime;
 
             animator.SetBool("walking", horizontal_input != 0 || vertical_input != 0);
@@ -57,8 +61,16 @@ namespace IndieMarc.TopDown
 
         private void FixedUpdate()
         {
-            horizontal_input = Input.GetAxisRaw("Horizontal");
-            vertical_input = Input.GetAxisRaw("Vertical");
+            if (!IsDead())
+            {
+                horizontal_input = Input.GetAxisRaw("Horizontal");
+                vertical_input = Input.GetAxisRaw("Vertical");
+            }
+            else
+            {
+                horizontal_input = 0;
+                vertical_input = 0;
+            }
 
             rigid.velocity = speed * Time.deltaTime * new Vector2(horizontal_input, vertical_input).normalized;
         }
@@ -147,12 +159,24 @@ namespace IndieMarc.TopDown
             {
                 state = PlayerCharacterState.Dead;
                 rigid.velocity = Vector2.zero;
-                //move = Vector2.zero;
-                //state_timer = 0f;
                 collide.enabled = false;
 
-                if (onDeath != null)
-                    onDeath.Invoke();
+                animator.SetTrigger("die");
+
+                //if (onDeath != null)
+                //    onDeath.Invoke();
+            }
+        }
+
+        public void OnSwordHit(Collider2D other)
+        {
+            if (other.TryGetComponent(out Enemy enemy))
+            {
+                enemy.TakeDamage(attack_damage);
+                enemy.Push(other.transform.position - transform.position);
+
+                if (onAttackHit != null)
+                    onAttackHit.Invoke(enemy.gameObject);
             }
         }
     }

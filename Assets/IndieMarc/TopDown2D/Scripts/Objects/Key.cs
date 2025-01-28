@@ -37,7 +37,7 @@ namespace IndieMarc.TopDown
         
         private void OnTriggerEnter2D(Collider2D collision)
         {
-            if (collision.gameObject.GetComponent<PlayerCharacter>())
+            if (collision.gameObject.TryGetComponent(out Player _))
             {
                 TakeKey();
             }
