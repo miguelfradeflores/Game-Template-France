@@ -6,6 +6,9 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/IndieMarc/TopDown2D/Scenes/Main_Menu.unity
+    guid: 41d7442dd6fee45fab79f420d89976f1
+  - enabled: 1
     path: Assets/IndieMarc/TopDown2D/Scenes/Level1.unity
     guid: 8f6c3e5a4f044c247b93ab3251b795af
   - enabled: 1
