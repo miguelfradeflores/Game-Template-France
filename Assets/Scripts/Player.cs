@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -15,15 +13,13 @@ namespace IndieMarc.TopDown
 {
     public class Player : MonoBehaviour
     {
-        [SerializeField] private CameraVFX m_CameraVFX;
-
-        [SerializeField] private Material m_NormalMaterial;
-        [SerializeField] private Material m_WhiteMaterial;
+        public Material normalMaterial;
+        public Material whiteMaterial;
 
         public float max_hp = 5f;
         public float attack_damage = 1f;
 
-        public float m_Speed;
+        public float speed;
         private float horizontal_input;
         private float vertical_input;
         private float m_HealthPoints;
@@ -32,38 +28,33 @@ namespace IndieMarc.TopDown
         public UnityAction onHit;
         public UnityAction<GameObject> onAttackHit;
 
-        private Rigidbody2D m_RigidBody;
-        private Collider2D m_Collider;
-        private Animator m_Animator;
-        private SpriteRenderer m_Sprite;
-        private SpriteRenderer m_Sword;
-        private PlayerCharacterState m_State;
+        private CameraVFX m_CameraVFX;
+        public Animator animator;
+        public SpriteRenderer spriteRenderer;
+        public SpriteRenderer swordSpriteRenderer;
         private bool m_CanMove;
         private int m_Paranoia;
 
-        private static Player instance;
-
         private void Awake()
         {
-            if (instance != null) Destroy(gameObject);
-            instance = this;
-
-            m_RigidBody = GetComponent<Rigidbody2D>();
-            m_Collider = GetComponent<Collider2D>();
-            m_Animator = GetComponent<Animator>();
-            m_Sprite = GetComponent<SpriteRenderer>();
-            m_Sword = transform.GetChild(0).GetComponent<SpriteRenderer>();
+            if (FindObjectsByType<Player>(FindObjectsSortMode.None).Length > 1) Destroy(gameObject);
+            DontDestroyOnLoad(gameObject);
 
             m_HealthPoints = max_hp;
             m_Paranoia = 0;
             m_CanMove = true;
         }
 
+        private void Start()
+        {
+            m_CameraVFX = FindFirstObjectByType<CameraVFX>();
+        }
+
         void Update()
         {
             if (!IsAlive()) return;
 
-            m_Animator.SetBool("walking", horizontal_input != 0 || vertical_input != 0);
+            animator.SetBool("walking", horizontal_input != 0 || vertical_input != 0);
 
             if (Input.GetMouseButtonDown(0)) CalculateAttack();
         }
@@ -81,7 +72,7 @@ namespace IndieMarc.TopDown
                 vertical_input = 0;
             }
 
-            transform.Translate(m_Speed * Time.deltaTime * new Vector2(horizontal_input, vertical_input).normalized);
+            transform.Translate(speed * Time.deltaTime * new Vector2(horizontal_input, vertical_input).normalized);
         }
 
         private void CalculateAttack()
@@ -97,7 +88,7 @@ namespace IndieMarc.TopDown
 
         private void Attack(string direction)
         {
-            m_Animator.SetTrigger(direction);
+            animator.SetTrigger(direction);
         }
 
         public void HealDamage(float heal)
@@ -119,25 +110,26 @@ namespace IndieMarc.TopDown
 
             m_CanMove = false;
 
-            m_Sprite.material = m_WhiteMaterial;
-            m_Sword.material = m_WhiteMaterial;
+            spriteRenderer.material = whiteMaterial;
+            swordSpriteRenderer.material = whiteMaterial;
 
-            m_CameraVFX.Shake(0.3f, 0.1f);
+            if (!m_CameraVFX) m_CameraVFX = FindFirstObjectByType<CameraVFX>();
+            if(m_CameraVFX) m_CameraVFX.Shake(0.3f, 0.1f);
 
             LeanTween.delayedCall(0.15f, () =>
             {
-                m_Sprite.material = m_NormalMaterial;
-                m_Sword.material = m_NormalMaterial;
+                spriteRenderer.material = normalMaterial;
+                swordSpriteRenderer.material = normalMaterial;
             });
 
-            LeanTween.move(gameObject, transform.position + (transform.position - from).normalized * 1.5f, 1.5f / (m_Speed + 5))
+            LeanTween.move(gameObject, transform.position + (transform.position - from).normalized * 1.5f, 1.5f / (speed + 5))
             .setEaseOutQuad()
             .setOnComplete(() =>
             {
                 if (m_HealthPoints <= 0)
                 {
                     Debug.Log("Dying");
-                    m_Animator.SetTrigger("die");
+                    animator.SetTrigger("die");
                 }
                 else
                 {
@@ -150,11 +142,6 @@ namespace IndieMarc.TopDown
         }
 
         public float GetHP() => m_HealthPoints;
-
-        public static Player Get()
-        {
-            return instance;
-        }
 
         public void OnSwordHit(Collider2D other)
         {
@@ -179,12 +166,21 @@ namespace IndieMarc.TopDown
 
         private void TurnOnParanoiaMode()
         {
-            m_CameraVFX.TurnOnParanoiaMode();
+            if (!m_CameraVFX) m_CameraVFX = FindFirstObjectByType<CameraVFX>();
+            if (m_CameraVFX) m_CameraVFX.TurnOnParanoiaMode();
         }
 
         private void TurnOffParanoiaMode()
         {
-            m_CameraVFX.TurnOffParanoiaMode();
+            if (!m_CameraVFX) m_CameraVFX = FindFirstObjectByType<CameraVFX>();
+            if (m_CameraVFX) m_CameraVFX.TurnOffParanoiaMode();
+        }
+
+        public void SetPlayerParameters(Character_Selector properties)
+        {
+            spriteRenderer.sprite = properties.character_sprite;
+            swordSpriteRenderer.sprite = properties.character_sword_sprite;
+            animator.runtimeAnimatorController = properties.animator_controller;
         }
     }
 }

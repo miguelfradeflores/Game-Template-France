@@ -14,32 +14,92 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   characters:
   - character_name: student_1
-    character_sprite: {fileID: 363052589, guid: 806acee082b6f0640b043709897e133e,
-      type: 3}
-  - character_name: student_2
-    character_sprite: {fileID: -903056120, guid: c6a0a70d7503a364ca218074e521d0b4,
-      type: 3}
-  - character_name: student_3
-    character_sprite: {fileID: -1593191491, guid: ed36883a78b4e294a9c4b6e9e912b1ca,
-      type: 3}
-  - character_name: student_4
-    character_sprite: {fileID: -1473944386, guid: d87f00772359f5340ab43bb93d7e9d2f,
-      type: 3}
-  - character_name: student_5
-    character_sprite: {fileID: 1437225250, guid: 6e6306a35e34121418895db1fc7dd05b,
-      type: 3}
-  - character_name: student_6
-    character_sprite: {fileID: -381661139, guid: 150550dfeb0388e47b084efacda12c62,
-      type: 3}
-  - character_name: student_7
-    character_sprite: {fileID: -321240038, guid: e61cf4db4b99e5d4181a4b132133ec4f,
-      type: 3}
-  - character_name: student_8
-    character_sprite: {fileID: -575096351, guid: 48e01fec620026047abc6cb60e115e26,
-      type: 3}
-  - character_name: student_9
-    character_sprite: {fileID: 1745419382, guid: fa61345b0479c9840b1b399b8c679899,
-      type: 3}
-  - character_name: student_10
     character_sprite: {fileID: -1822453693, guid: 893dc07c33b08472daa76747fa595521,
       type: 3}
+    character_sword_sprite: {fileID: -1730503691, guid: 893dc07c33b08472daa76747fa595521,
+      type: 3}
+    character_sword_swing_sprite: {fileID: 1570446391, guid: 893dc07c33b08472daa76747fa595521,
+      type: 3}
+    animator_controller: {fileID: 9100000, guid: bcf17fbbb52705744a6afb587917729d,
+      type: 2}
+  - character_name: student_2
+    character_sprite: {fileID: -283201230, guid: e61cf4db4b99e5d4181a4b132133ec4f,
+      type: 3}
+    character_sword_sprite: {fileID: 1752122060, guid: e61cf4db4b99e5d4181a4b132133ec4f,
+      type: 3}
+    character_sword_swing_sprite: {fileID: 592507982, guid: e61cf4db4b99e5d4181a4b132133ec4f,
+      type: 3}
+    animator_controller: {fileID: 9100000, guid: f69adb026cbc5d24fa471b02bf1b052e,
+      type: 2}
+  - character_name: student_3
+    character_sprite: {fileID: -1916831937, guid: 806acee082b6f0640b043709897e133e,
+      type: 3}
+    character_sword_sprite: {fileID: 1510329570, guid: 806acee082b6f0640b043709897e133e,
+      type: 3}
+    character_sword_swing_sprite: {fileID: -1202483421, guid: 806acee082b6f0640b043709897e133e,
+      type: 3}
+    animator_controller: {fileID: 9100000, guid: 2058ff064a7b6294694b3b697dc2d8d7,
+      type: 2}
+  - character_name: student_4
+    character_sprite: {fileID: 1438392853, guid: c6a0a70d7503a364ca218074e521d0b4,
+      type: 3}
+    character_sword_sprite: {fileID: -210744831, guid: c6a0a70d7503a364ca218074e521d0b4,
+      type: 3}
+    character_sword_swing_sprite: {fileID: -1498133391, guid: c6a0a70d7503a364ca218074e521d0b4,
+      type: 3}
+    animator_controller: {fileID: 9100000, guid: e07c4f606cff32442acefa268f5ed88a,
+      type: 2}
+  - character_name: student_5
+    character_sprite: {fileID: -1593191491, guid: ed36883a78b4e294a9c4b6e9e912b1ca,
+      type: 3}
+    character_sword_sprite: {fileID: 1873904443, guid: ed36883a78b4e294a9c4b6e9e912b1ca,
+      type: 3}
+    character_sword_swing_sprite: {fileID: -132962407, guid: ed36883a78b4e294a9c4b6e9e912b1ca,
+      type: 3}
+    animator_controller: {fileID: 9100000, guid: e766836270db47b4595dfd1e97e38390,
+      type: 2}
+  - character_name: student_6
+    character_sprite: {fileID: -945693526, guid: d87f00772359f5340ab43bb93d7e9d2f,
+      type: 3}
+    character_sword_sprite: {fileID: 292277883, guid: d87f00772359f5340ab43bb93d7e9d2f,
+      type: 3}
+    character_sword_swing_sprite: {fileID: 1469147654, guid: d87f00772359f5340ab43bb93d7e9d2f,
+      type: 3}
+    animator_controller: {fileID: 9100000, guid: 5058da4c3bf1e664c94c5a639e55acbf,
+      type: 2}
+  - character_name: student_7
+    character_sprite: {fileID: -210035827, guid: 6e6306a35e34121418895db1fc7dd05b,
+      type: 3}
+    character_sword_sprite: {fileID: -205484242, guid: 6e6306a35e34121418895db1fc7dd05b,
+      type: 3}
+    character_sword_swing_sprite: {fileID: -496586212, guid: 6e6306a35e34121418895db1fc7dd05b,
+      type: 3}
+    animator_controller: {fileID: 9100000, guid: 8d8b6bc41a1d03c45bc789d6db9c1c26,
+      type: 2}
+  - character_name: student_8
+    character_sprite: {fileID: 351955819, guid: 150550dfeb0388e47b084efacda12c62,
+      type: 3}
+    character_sword_sprite: {fileID: 485724662, guid: 150550dfeb0388e47b084efacda12c62,
+      type: 3}
+    character_sword_swing_sprite: {fileID: -809752754, guid: 150550dfeb0388e47b084efacda12c62,
+      type: 3}
+    animator_controller: {fileID: 9100000, guid: aec9e406e7aa9fe419510dc9f73fc2c8,
+      type: 2}
+  - character_name: student_9
+    character_sprite: {fileID: -575096351, guid: 48e01fec620026047abc6cb60e115e26,
+      type: 3}
+    character_sword_sprite: {fileID: -593784494, guid: 48e01fec620026047abc6cb60e115e26,
+      type: 3}
+    character_sword_swing_sprite: {fileID: -1184812774, guid: 48e01fec620026047abc6cb60e115e26,
+      type: 3}
+    animator_controller: {fileID: 9100000, guid: 60260883ec39e0b438eddce48589d403,
+      type: 2}
+  - character_name: student_10
+    character_sprite: {fileID: 1745419382, guid: fa61345b0479c9840b1b399b8c679899,
+      type: 3}
+    character_sword_sprite: {fileID: -1884441504, guid: fa61345b0479c9840b1b399b8c679899,
+      type: 3}
+    character_sword_swing_sprite: {fileID: -127981672, guid: fa61345b0479c9840b1b399b8c679899,
+      type: 3}
+    animator_controller: {fileID: 9100000, guid: f726455586eed484292cdf55ce96a786,
+      type: 2}

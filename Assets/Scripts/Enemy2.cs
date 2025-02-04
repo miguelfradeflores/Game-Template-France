@@ -15,7 +15,7 @@ namespace IndieMarc.TopDown
     {
         private enum State { Moving, Idle, Chasing, Attacking, TakingDamage };
 
-        [SerializeField] private Player m_Player;
+        private Player m_Player;
         [SerializeField] private Material m_NormalMaterial;
         [SerializeField] private Material m_WhiteMaterial;
         [SerializeField] private float m_Speed;
@@ -40,6 +40,7 @@ namespace IndieMarc.TopDown
 
         private void Awake()
         {
+            m_Player = FindFirstObjectByType<Player>();
             m_Animator = GetComponent<Animator>();
             m_Sprite = GetComponent<SpriteRenderer>();
             m_Sword = transform.GetChild(0).GetComponent<SpriteRenderer>();

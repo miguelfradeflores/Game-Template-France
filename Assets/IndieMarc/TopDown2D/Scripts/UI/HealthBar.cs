@@ -24,14 +24,14 @@ namespace IndieMarc.TopDown
         {
             if (icon_bar != null)
             {
-                Player character = Player.Get();
+                Player character = FindFirstObjectByType<Player>();
                 icon_bar.value = Mathf.RoundToInt(character.GetHP());
                 icon_bar.value_max = Mathf.RoundToInt(character.max_hp);
             }
 
             if (health_bar != null)
             {
-                Player character = Player.Get();
+                Player character = FindFirstObjectByType<Player>();
                 health_bar.value = character.GetHP();
                 health_bar.value_max = character.max_hp;
             }

@@ -206,8 +206,8 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1836969393}
-        m_TargetAssemblyTypeName: Character_Manager, Assembly-CSharp
-        m_MethodName: changeScene
+        m_TargetAssemblyTypeName: IndieMarc.TopDown.Character_Manager, Assembly-CSharp
+        m_MethodName: ConfirmPlayerAndPlay
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -483,7 +483,7 @@ GameObject:
   - component: {fileID: 1698414388}
   - component: {fileID: 1698414387}
   m_Layer: 0
-  m_Name: fondo_menu
+  m_Name: Fondo Menu
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -660,7 +660,7 @@ GameObject:
   - component: {fileID: 1836969394}
   - component: {fileID: 1836969393}
   m_Layer: 0
-  m_Name: player
+  m_Name: Player Selection
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -678,8 +678,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a74c4deed7d6c4877bd6f0c4fdb22b79, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  CharacterDB: {fileID: 11400000, guid: b548cc3b4903b469ea227359221e7f56, type: 2}
-  player: {fileID: 1836969394}
+  m_CharacterDB: {fileID: 11400000, guid: b548cc3b4903b469ea227359221e7f56, type: 2}
+  m_PlayerSprite: {fileID: 1836969394}
+  m_NormalMaterial: {fileID: 2100000, guid: 872bc0eaeb2011c4ca3d6e4198ce7279, type: 2}
+  m_WhiteMaterial: {fileID: 2100000, guid: 8802654581395684bbcdbc283c801632, type: 2}
 --- !u!212 &1836969394
 SpriteRenderer:
   m_ObjectHideFlags: 0

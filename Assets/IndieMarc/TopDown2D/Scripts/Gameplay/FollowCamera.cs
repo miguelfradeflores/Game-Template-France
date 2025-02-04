@@ -37,6 +37,7 @@ namespace IndieMarc.TopDown
         {
             _instance = this;
             cam = GetComponent<Camera>();
+            target = FindFirstObjectByType<Player>().gameObject;
         }
 
         void LateUpdate()
