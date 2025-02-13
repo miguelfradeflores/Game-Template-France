@@ -124,9 +124,11 @@ namespace IndieMarc.TopDown
 
             SpriteRenderer swordSprite = sword.AddComponent<SpriteRenderer>();
             swordSprite.sprite = properties.character_sword_sprite;
+            swordSprite.sortingOrder = 10;
 
             SpriteRenderer swordSwingSprite = swordSwing.AddComponent<SpriteRenderer>();
             swordSwingSprite.sprite = properties.character_sword_swing_sprite;
+            swordSwingSprite.sortingOrder = 10;
             swordSwing.SetActive(false);
 
             CircleCollider2D attackZoneCollider = attackZone.AddComponent<CircleCollider2D>();
