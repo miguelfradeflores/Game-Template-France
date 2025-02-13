@@ -72,7 +72,7 @@ namespace IndieMarc.TopDown
             }
         }
 
-        private void Start()
+        /*private void Start()
         {
             if (opened_at_start)
                 Open();
@@ -84,7 +84,7 @@ namespace IndieMarc.TopDown
                 else
                     Close();
             }
-        }
+        }*/
 
         void Update()
         {
@@ -108,10 +108,10 @@ namespace IndieMarc.TopDown
                 bool should_open = opened_at_start ? (nb < nb_triggers) : (nb >= nb_triggers);
                 if (should_open && !is_opened)
                     Open();
-                if (!should_open && is_opened)
-                    Close();
+                /*if (!should_open && is_opened)
+                    Close();*/
             }
-            
+
             Vector3 move_dir = target_pos - transform.position;
             if (move_dir.magnitude > 0.01f)
             {
@@ -145,7 +145,7 @@ namespace IndieMarc.TopDown
             }
         }
 
-        public void Close()
+        /*public void Close()
         {
             if (is_opened)
             {
@@ -159,34 +159,34 @@ namespace IndieMarc.TopDown
                 if (unique_id)
                     unique_id.SetValue(0);
             }
-        }
+        }*/
 
-        private void TryOpenWithKey()
+        /*private void TryOpenWithKey()
         {
             if (key_can_open && PlayerData.Get().HasKey(key_index))
             {
                 PlayerData.Get().RemoveKey(key_index);
                 Open();
             }
-        }
+        }*/
 
-        public bool CanKeyUnlock(Key key)
+        /*public bool CanKeyUnlock(Key key)
         {
             return (key_can_open && key.key_index == key_index);
-        }
+        }*/
 
         public bool IsOpened()
         {
             return is_opened;
         }
 
-        private void OnCollisionEnter2D(Collision2D collision)
+        /*private void OnCollisionEnter2D(Collision2D collision)
         {
             if (collision.gameObject.tag == "Player")
             {
                 TryOpenWithKey();
             }
-        }
+        }*/
     }
 
 }

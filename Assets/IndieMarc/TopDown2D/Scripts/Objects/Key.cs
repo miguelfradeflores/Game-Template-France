@@ -13,6 +13,7 @@ namespace IndieMarc.TopDown
     public class Key : MonoBehaviour
     {
         public int key_index = 0; //Which door it opens
+        [SerializeField] private Door doorToOpen;
 
         private string unique_id;
 
@@ -37,9 +38,18 @@ namespace IndieMarc.TopDown
         
         private void OnTriggerEnter2D(Collider2D collision)
         {
-            if (collision.gameObject.TryGetComponent(out Player _))
+            /*if (collision.gameObject.TryGetComponent(out Player _))
             {
                 TakeKey();
+            }*/
+
+            if (collision.gameObject.TryGetComponent(out Player _))
+            {
+                if (doorToOpen != null && !doorToOpen.IsOpened())
+                {
+                    doorToOpen.Open();
+                    Destroy(gameObject);
+                }
             }
         }
     }
