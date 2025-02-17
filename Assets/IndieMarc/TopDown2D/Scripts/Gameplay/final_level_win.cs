@@ -9,11 +9,23 @@ namespace IndieMarc.TopDown
         private Player m_Player;
         private Transform player_p;
         public float distancia = 2.0f;
+
+        public bool finished = false;
         // Start is called before the first frame update
         void Start()
         {
             m_Player = FindFirstObjectByType<Player>();
             player_p = m_Player.GetComponent<Transform>();
+        }
+
+        IEnumerator Win()
+        {
+            if (finished)
+            {
+                Debug.Log("Game completed");
+                yield return new WaitForSeconds(5);
+                SceneNav.GoToLevel("Creditos", 6);
+            }
         }
 
         // Update is called once per frame
@@ -27,7 +39,16 @@ namespace IndieMarc.TopDown
                         Animator anim = child.GetComponent<Animator>();
                         anim.SetBool("lights_on", true);
                     }
+                    if (finished == false)
+                    {
+                        Debug.Log("Game completed");
+                        SceneNav.GoToLevel("Creditos", 6);
+                        finished = true;
+                    }
                 }
-            } }
+            }
+
+            Win();
+        }
     }
 }
