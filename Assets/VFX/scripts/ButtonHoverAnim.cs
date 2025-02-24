@@ -37,23 +37,26 @@ public class ButtonHoverAnim : MonoBehaviour, IPointerEnterHandler, IPointerExit
     {
         if (!m_HoverEnabled) return;
 
-        LeanTween.cancel(m_RectTransform);
+        LeanTween.reset();
 
-        if (m_HoverAnimationType == HoverAnimType.MoveRight) LeanTween.moveX(m_RectTransform, 125, 0.1f);
+        if (m_HoverAnimationType == HoverAnimType.MoveRight)
+        {
+            LeanTween.moveX(m_RectTransform, 125, 0.1f);
+        }
     }
 
     public void OnPointerExit(PointerEventData eventData)
     {
         if (!m_HoverEnabled) return;
 
-        LeanTween.cancel(m_RectTransform);
+        LeanTween.reset();
 
         if (m_HoverAnimationType == HoverAnimType.MoveRight) LeanTween.moveX(m_RectTransform, 75, 0.1f);
     }
 
     public void OnPointerClick(PointerEventData eventData)
     {
-        LeanTween.cancel(m_RectTransform);
+        LeanTween.reset();
 
         if (m_ClickAnimationType == ClickAnimType.MoveRightOffScreen)
             LeanTween.moveX(m_RectTransform, 1920, 0.5f).setEaseInCubic();
