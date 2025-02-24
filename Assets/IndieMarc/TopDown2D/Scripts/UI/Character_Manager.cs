@@ -150,6 +150,7 @@ namespace IndieMarc.TopDown
 
             Animator playerAnimator = player.AddComponent<Animator>();
             playerAnimator.runtimeAnimatorController = properties.animator_controller;
+            playerAnimator.fireEvents = false;
 
             playerController.animator = playerAnimator;
             playerController.spriteRenderer = playerSprite;
