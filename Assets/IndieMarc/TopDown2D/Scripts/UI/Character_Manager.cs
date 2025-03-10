@@ -91,6 +91,7 @@ namespace IndieMarc.TopDown
 
             GameObject player = new("Player");
             player.transform.position = new Vector3(-12, 0, 0);
+            player.tag = "Player";
 
             GameObject sword = new("Sword");
             sword.transform.parent = player.transform;
@@ -156,7 +157,7 @@ namespace IndieMarc.TopDown
             playerController.spriteRenderer = playerSprite;
             playerController.swordSpriteRenderer = swordSprite;
 
-            FindFirstObjectByType<SwitchScene>().SwitchSceneLeftToRight("Level1");
+            FindFirstObjectByType<SwitchScene>().SwitchSceneLeftToRight("Level4");
         }
     }
 }

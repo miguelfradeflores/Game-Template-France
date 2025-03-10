@@ -23,7 +23,7 @@ namespace IndieMarc.TopDown
             if (finished)
             {
                 Debug.Log("Game completed");
-                yield return new WaitForSeconds(5);
+                yield return new WaitForSeconds(50);
                 SceneNav.GoToLevel("Creditos", 6);
             }
         }
@@ -39,16 +39,15 @@ namespace IndieMarc.TopDown
                         Animator anim = child.GetComponent<Animator>();
                         anim.SetBool("lights_on", true);
                     }
-                    if (finished == false)
-                    {
-                        Debug.Log("Game completed");
-                        SceneNav.GoToLevel("Creditos", 6);
-                        finished = true;
-                    }
+                    //if (finished == false)
+                    //{
+                    //    Debug.Log("Game completed");
+                    //    SceneNav.GoToLevel("Creditos", 6);
+                    //    finished = true;
+                    //}
                 }
             }
 
-            Win();
         }
     }
 }

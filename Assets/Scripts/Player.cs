@@ -1,5 +1,7 @@
 using UnityEngine;
 using UnityEngine.Events;
+using System.Collections;
+
 
 public enum PlayerCharacterState
 {
@@ -23,6 +25,7 @@ namespace IndieMarc.TopDown
         private float horizontal_input;
         private float vertical_input;
         private float m_HealthPoints;
+        private Vector3 spawning_point;
 
         public UnityAction onDeath;
         public UnityAction onHit;
@@ -58,6 +61,8 @@ namespace IndieMarc.TopDown
 
             if (Input.GetMouseButtonDown(0)) CalculateAttack();
         }
+
+
 
         private void FixedUpdate()
         {
@@ -130,6 +135,8 @@ namespace IndieMarc.TopDown
                 {
                     Debug.Log("Dying");
                     animator.SetTrigger("die");
+                    new WaitForSeconds(1000);
+                    Revive();
                 }
                 else
                 {
@@ -182,5 +189,21 @@ namespace IndieMarc.TopDown
             swordSpriteRenderer.sprite = properties.character_sword_sprite;
             animator.runtimeAnimatorController = properties.animator_controller;
         }
+
+        public void setSpawnPoint(Vector3 spawnPoint)
+        {
+            spawning_point = spawnPoint;
+        }
+
+
+        private void Revive()
+        {
+            transform.localPosition = spawning_point;
+            animator.SetBool("walking", true);
+            HealDamage(3);
+            m_CanMove = true;
+
+        }
+
     }
 }
