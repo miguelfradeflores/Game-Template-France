@@ -157,7 +157,7 @@ namespace IndieMarc.TopDown
             playerController.spriteRenderer = playerSprite;
             playerController.swordSpriteRenderer = swordSprite;
 
-            FindFirstObjectByType<SwitchScene>().SwitchSceneLeftToRight("Level4");
+            FindFirstObjectByType<SwitchScene>().SwitchSceneLeftToRight("Level1");
         }
     }
 }
